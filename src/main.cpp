@@ -29,6 +29,7 @@
 #include <QMessageBox>
 #include <QTranslator>
 
+#include "apptranslator.h"
 #include "resources.h"
 
 /**
