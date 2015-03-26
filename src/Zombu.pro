@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     player.cpp \
     mysteryword.cpp \
     amelioration.cpp \
-    wordlibrary.cpp
+    wordlibrary.cpp \
+    apptranslator.cpp
 
 HEADERS  += mainfrm.h \
     gamescene.h \
@@ -43,7 +44,8 @@ HEADERS  += mainfrm.h \
     player.h \
     mysteryword.h \
     amelioration.h \
-    wordlibrary.h
+    wordlibrary.h \
+    apptranslator.h
 
 FORMS    += mainfrm.ui
 

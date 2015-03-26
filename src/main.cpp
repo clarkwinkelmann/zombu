@@ -41,9 +41,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QTranslator translator;
-    translator.load("en", GameFramework::localesPath());
-    a.installTranslator(&translator);
+    AppTranslator translator(&a);
+    translator.setPreferredLocale();
 
     // Vérifie que les images requises sont présentes
     QString ImagePath = GameFramework::imagesPath();
