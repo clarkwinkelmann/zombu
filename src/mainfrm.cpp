@@ -18,28 +18,6 @@
 #include "resources.h"
 
 MainFrm::MainFrm(QWidget *parent) : QWidget(parent), ui(new Ui::MainFrm) {
-    /*// Vérifie que les images requises sont présentes
-    if(     !QFile::exists(GameFramework::imagesPath()+"hero1.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"hero2.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"hero3.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"hero4.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"hero5.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie1.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie2.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie3.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie4.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie5.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"missile.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"box.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"wall.png")
-            ){
-        QMessageBox msgBox;
-        msgBox.setText("Des ressources indispensables n'ont pas pu être chargées. Le jeu va se fermer.");
-        msgBox.exec();
-        exit(0);
-        return;
-    }*/
-
     ui->setupUi(this);
 
     m_pGameScene = new GameScene;
