@@ -62,7 +62,17 @@ en vue du déploiement.
         return ResourceDir.absolutePath() + QDir::separator();
     }
 
+    /**
+     * @return Emplacement des images
+     */
     QString imagesPath() {
         return resourcesPath() + QDir::separator() + QString("images") + QDir::separator();
+    }
+
+    /**
+     * @return Emplacement des locales
+     */
+    QString localesPath() {
+        return resourcesPath() + QDir::separator() + QString("locales") + QDir::separator();
     }
 }

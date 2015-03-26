@@ -27,6 +27,7 @@
 #include <QTime>
 #include <QFile>
 #include <QMessageBox>
+#include <QTranslator>
 
 #include "resources.h"
 
@@ -39,6 +40,10 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QTranslator translator;
+    translator.load("en", GameFramework::localesPath());
+    a.installTranslator(&translator);
 
     // Vérifie que les images requises sont présentes
     QString ImagePath = GameFramework::imagesPath();

@@ -46,3 +46,5 @@ HEADERS  += mainfrm.h \
     wordlibrary.h
 
 FORMS    += mainfrm.ui
+
+TRANSLATIONS = locales/en.ts
