@@ -208,4 +208,98 @@
         <translation>Go to main menu</translation>
     </message>
 </context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../gamecore.cpp" line="265"/>
+        <source>PAUSE</source>
+        <translatorcomment>PAUSE</translatorcomment>
+        <translation>PAUSE</translation>
+    </message>
+    <message>
+        <location filename="../gamecore.cpp" line="489"/>
+        <source>GAME</source>
+        <translation>GAME</translation>
+    </message>
+    <message>
+        <location filename="../gamecore.cpp" line="489"/>
+        <source>OVER</source>
+        <translation>OVER</translation>
+    </message>
+    <message>
+        <location filename="../gamecore.cpp" line="512"/>
+        <source>Trouvé %1 !</source>
+        <translation>Found %1 !</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="65"/>
+        <source>Des ressources indispensables n&apos;ont pas pu être chargées. Le jeu va se fermer.</source>
+        <translation>Somes required ressources could not be loaded. The game will close.</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="134"/>
+        <source>Vous avez trouvé le mot mystère !</source>
+        <translation>You found the mystery word !</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="135"/>
+        <source>Encore %1 erreurs possibles</source>
+        <translation>%1 more errors allowed</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="135"/>
+        <source>Perdu !</source>
+        <translation>Looser !</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="139"/>
+        <source>B R A V O</source>
+        <translation>B R A V O</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="140"/>
+        <source>Vous avez atteint l&apos;amélioration maximum !</source>
+        <translation>You got the highest amelioration possible !</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="217"/>
+        <source>Score: %1</source>
+        <translation>Score: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="218"/>
+        <source>Niveau: %1</source>
+        <translation>Level: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="221"/>
+        <source>Vague %1</source>
+        <translation>Round: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="231"/>
+        <source>Coups reçus: %1</source>
+        <translation>Blows received: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="232"/>
+        <source>Coups tirés: %1 (%2% ont atteint leur cible)</source>
+        <translation>Shots fired: %1 (%2% hit their target)</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="234"/>
+        <source>Zombies tués: %1</source>
+        <translation>Zombies killed: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="238"/>
+        <source>Passer au niveau supérieur</source>
+        <translation>Level up</translation>
+    </message>
+    <message>
+        <location filename="../mainfrm.cpp" line="239"/>
+        <source>Score de %1 requis</source>
+        <translation>Score of %1 required</translation>
+    </message>
+</context>
 </TS>

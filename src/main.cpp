@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
         !QFile::exists(ImagePath+"wall.png")
     ){
         QMessageBox msgBox;
-        msgBox.setText("Des ressources indispensables n'ont pas pu être chargées. Le jeu va se fermer.");
+        msgBox.setText(QObject::tr("Des ressources indispensables n'ont pas pu être chargées. Le jeu va se fermer."));
         msgBox.exec();
         return 0;
     }
