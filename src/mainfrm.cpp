@@ -209,6 +209,11 @@ void MainFrm::on_btnGameMenuToMainMenu_clicked(){
     displayMainMenu();
 }
 
+//! Gère le clic FR
+void MainFrm::on_btnPickLangFr_clicked() { emit changedLocale(AppTranslator::FR); ui->retranslateUi(this);  }
+//! Gère le clic EN
+void MainFrm::on_btnPickLangEn_clicked() { emit changedLocale(AppTranslator::EN); ui->retranslateUi(this); }
+
 //!
 //! \brief Met à jour la zone de status du jeu.
 //! \param pGameStatus Un object GameStatus représentant l'état de la partie

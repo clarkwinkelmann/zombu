@@ -7,22 +7,32 @@
 #ifndef APPTRANSLATOR_H
 #define APPTRANSLATOR_H
 
-#include <QTranslator>
+#include <QObject>
 #include <QApplication>
+#include <QTranslator>
 
-class AppTranslator
+/**
+ * Gère les changements de langue de l'app
+ */
+class AppTranslator : public QObject
 {
+    Q_OBJECT
+
 public:
+    /**
+     * Langues disponibles
+     */
     enum Locale_e{
         FR,
         EN
     };
 
     AppTranslator(QApplication *m_pApp);
+
     void setPreferredLocale();
 
-signals:
-    void changeLocale(Locale_e locale);
+public slots:
+    void changeLocale(AppTranslator::Locale_e locale);
 
 private:
     QApplication *m_pApp;

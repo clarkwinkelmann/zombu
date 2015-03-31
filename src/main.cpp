@@ -76,5 +76,9 @@ int main(int argc, char *argv[])
     MainFrm w;
     w.showMaximized();
 
+    // Connecte les signaux de changement de langue au gestionnaire
+    QObject::connect(&w, SIGNAL(changedLocale(AppTranslator::Locale_e)),
+                     &translator, SLOT(changeLocale(AppTranslator::Locale_e)));
+
     return a.exec();
 }
