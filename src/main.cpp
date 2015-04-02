@@ -27,7 +27,9 @@
 #include <QTime>
 #include <QFile>
 #include <QMessageBox>
+#include <QTranslator>
 
+#include "apptranslator.h"
 #include "resources.h"
 
 /**
@@ -39,6 +41,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    AppTranslator translator(&a);
+    translator.setPreferredLocale();
 
     // Vérifie que les images requises sont présentes
     QString ImagePath = GameFramework::imagesPath();
@@ -58,7 +63,7 @@ int main(int argc, char *argv[])
         !QFile::exists(ImagePath+"wall.png")
     ){
         QMessageBox msgBox;
-        msgBox.setText("Des ressources indispensables n'ont pas pu être chargées. Le jeu va se fermer.");
+        msgBox.setText(QObject::tr("Des ressources indispensables n'ont pas pu être chargées. Le jeu va se fermer."));
         msgBox.exec();
         return 0;
     }
@@ -70,6 +75,10 @@ int main(int argc, char *argv[])
 
     MainFrm w;
     w.showMaximized();
+
+    // Connecte les signaux de changement de langue au gestionnaire
+    QObject::connect(&w, SIGNAL(changedLocale(AppTranslator::Locale_e)),
+                     &translator, SLOT(changeLocale(AppTranslator::Locale_e)));
 
     return a.exec();
 }

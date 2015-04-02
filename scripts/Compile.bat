@@ -81,14 +81,11 @@ if "%Verbose%"=="1" echo. && echo Copie des fichiers vers le repertoire de sorti
 copy %CompilDir%\release\%Executable% %DeployDir%\ > nul
 
 if "%Verbose%"=="1" echo Copie des ressources...
-if "%Debug%"=="1" goto copydebug
-	xcopy ..\res\images %DeployDir%\res\images\ /Q > nul
-	xcopy ..\res\mots_fr.txt %DeployDir%\res\ /Q > nul
-goto endcopy
-:copydebug
-	xcopy ..\res\images %DeployDir%\res\images\
-	xcopy ..\res\mots_fr.txt %DeployDir%\res\
-:endcopy
+mkdir %DeployDir%\res\images\
+mkdir %DeployDir%\res\locales\
+copy ..\res\images\*.png %DeployDir%\res\images\
+copy ..\res\locales\*.qm %DeployDir%\res\locales\
+copy ..\res\mots_fr.txt %DeployDir%\res\
 
 if "%Verbose%"=="1" echo Fin de la copie.
 

@@ -18,28 +18,6 @@
 #include "resources.h"
 
 MainFrm::MainFrm(QWidget *parent) : QWidget(parent), ui(new Ui::MainFrm) {
-    /*// Vérifie que les images requises sont présentes
-    if(     !QFile::exists(GameFramework::imagesPath()+"hero1.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"hero2.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"hero3.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"hero4.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"hero5.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie1.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie2.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie3.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie4.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"zombie5.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"missile.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"box.png") ||
-            !QFile::exists(GameFramework::imagesPath()+"wall.png")
-            ){
-        QMessageBox msgBox;
-        msgBox.setText("Des ressources indispensables n'ont pas pu être chargées. Le jeu va se fermer.");
-        msgBox.exec();
-        exit(0);
-        return;
-    }*/
-
     ui->setupUi(this);
 
     m_pGameScene = new GameScene;
@@ -153,13 +131,13 @@ void MainFrm::updateShopAmelioration(GameStatus *pGameStatus, Player *pPlayer, P
             }
         }
         findChild<QLabel*>("labWord"+AmeliorationSuffix)->setText(DisplayWord.join(" "));
-        findChild<QLabel*>("labErrors"+AmeliorationSuffix)->setText(FoundWord ? "Vous avez trouvé le mot mystère !" :
-                            (RemainingTries > 0 ? QString("Encore %1 erreurs possibles").arg(RemainingTries-1) : "Perdu !"));
+        findChild<QLabel*>("labErrors"+AmeliorationSuffix)->setText(FoundWord ? QObject::tr("Vous avez trouvé le mot mystère !") :
+                            (RemainingTries > 0 ? QString(QObject::tr("Encore %1 erreurs possibles")).arg(RemainingTries-1) : QObject::tr("Perdu !")));
 
         findChild<QProgressBar*>("pgbAmelioration"+AmeliorationSuffix)->setValue(pPlayer->compareWithNextAmelioration(Amelioration));
     }else{
-        findChild<QLabel*>("labWord"+AmeliorationSuffix)->setText("B R A V O");
-        findChild<QLabel*>("labErrors"+AmeliorationSuffix)->setText("Vous avez atteint l'amélioration maximum ");
+        findChild<QLabel*>("labWord"+AmeliorationSuffix)->setText(QObject::tr("B R A V O"));
+        findChild<QLabel*>("labErrors"+AmeliorationSuffix)->setText(QObject::tr("Vous avez atteint l'amélioration maximum !"));
         findChild<QProgressBar*>("pgbAmelioration"+AmeliorationSuffix)->setValue(100);
     }
 }
@@ -231,16 +209,21 @@ void MainFrm::on_btnGameMenuToMainMenu_clicked(){
     displayMainMenu();
 }
 
+//! Gère le clic FR
+void MainFrm::on_btnPickLangFr_clicked() { emit changedLocale(AppTranslator::FR); ui->retranslateUi(this);  }
+//! Gère le clic EN
+void MainFrm::on_btnPickLangEn_clicked() { emit changedLocale(AppTranslator::EN); ui->retranslateUi(this); }
+
 //!
 //! \brief Met à jour la zone de status du jeu.
 //! \param pGameStatus Un object GameStatus représentant l'état de la partie
 //!
 void MainFrm::on_updateStatus(GameStatus* pGameStatus){
-    ui->labScore->setText(QString("Score: %1").arg(pGameStatus->getScore()));
-    ui->labLevel->setText(QString("Niveau: %1").arg(pGameStatus->getLevel()));
+    ui->labScore->setText(QString(QObject::tr("Score: %1")).arg(pGameStatus->getScore()));
+    ui->labLevel->setText(QString(QObject::tr("Niveau: %1")).arg(pGameStatus->getLevel()));
     ui->pgbLife->setValue(pGameStatus->getLife());
     ui->pgbMunitions->setValue(pGameStatus->getMunitions());
-    ui->pgbRound->setFormat(QString("Vague %1").arg(pGameStatus->getRound()));
+    ui->pgbRound->setFormat(QString(QObject::tr("Vague %1")).arg(pGameStatus->getRound()));
     ui->pgbRound->setValue(pGameStatus->getRoundProgress());
 }
 
@@ -250,15 +233,15 @@ void MainFrm::on_updateStatus(GameStatus* pGameStatus){
 //! \param pPlayer Pointeur vers l'objet Player
 //!
 void MainFrm::on_roundEnded(GameStatus *pGameStatus, Player* pPlayer){
-    ui->labRoundStatDamages->setText(QString("Coups reçus: %1").arg(pGameStatus->getRoundDamages()));
-    ui->labRoundStatShoots->setText(QString("Coups tirés: %1 (%2% ont atteint leur cible)").arg(pGameStatus->getRoundShoots()).
+    ui->labRoundStatDamages->setText(QString(QObject::tr("Coups reçus: %1")).arg(pGameStatus->getRoundDamages()));
+    ui->labRoundStatShoots->setText(QString(QObject::tr("Coups tirés: %1 (%2% ont atteint leur cible)")).arg(pGameStatus->getRoundShoots()).
                                     arg(qRound(static_cast<float>(pGameStatus->getRoundHits())/static_cast<float>(pGameStatus->getRoundShoots())*100)));
-    ui->labRoundStatKills->setText(QString("Zombies tués: %1").arg(pGameStatus->getRoundKills()));
+    ui->labRoundStatKills->setText(QString(QObject::tr("Zombies tués: %1")).arg(pGameStatus->getRoundKills()));
 
     bool CanLevelUp = m_pGameScene->getCore()->canLevelUp();
     ui->btnNextLevel->setEnabled(CanLevelUp);
-    ui->btnNextLevel->setText(QString("Passer au niveau supérieur")+
-                              (CanLevelUp ? QString(" (L)") : QString(" - Score de %1 requis").arg(m_pGameScene->getCore()->getRequiredScore())));
+    ui->btnNextLevel->setText(QString(QObject::tr("Passer au niveau supérieur"))+
+                              (CanLevelUp ? QString(" (L)") : " - " + QString(QObject::tr("Score de %1 requis")).arg(m_pGameScene->getCore()->getRequiredScore())));
 
     updateShop(pGameStatus, pPlayer);
 

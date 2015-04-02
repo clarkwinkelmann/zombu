@@ -104,7 +104,7 @@ void Hero::goBack   (bool Start){ m_GoBack    = Start; }
 Missile* Hero::shoot(){
     if(m_LastShootTime.elapsed() > m_ShootInterval*1000 && m_Munitions >= 1 && m_Life > 0){
         float AngleInRadians = qDegreesToRadians(rotation());
-        // Le missile est positionné devant le joueur pour éviter qu'il neHERO_MISSILE_SPAWN_DISTANCE le joueur est collé
+        // Le missile est positionné devant le joueur pour éviter qu'il ne touche le mur contre lequel le joueur est collé
         Missile* pMissile = new Missile(pos() + QPointF(width()/2,height()/2) + QPointF(qSin(AngleInRadians),qCos(AngleInRadians)*-1) * HERO_MISSILE_SPAWN_DISTANCE,
                                         rotation(),m_MissileSpeed,m_MissileDamage);
         pMissile->setGameZone(m_GameZone);

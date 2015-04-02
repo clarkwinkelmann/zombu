@@ -262,7 +262,7 @@ void GameCore::beginRound(){
 
     m_pPauseText = new QGraphicsTextItem;
     m_pScene->addItem(m_pPauseText);
-    m_pPauseText->setHtml(QString("<div style=\"color: red; font-size: %1px; font-weight: bold;\"><center>PAUSE</center></div>")
+    m_pPauseText->setHtml(QString("<div style=\"color: red; font-size: %1px; font-weight: bold;\"><center>" + QObject::tr("PAUSE") +  "</center></div>")
                           .arg(m_pScene->height()/2.5));
     m_pPauseText->setTextWidth(m_pScene->width());
     m_pPauseText->setPos(QPointF(0,m_pScene->height()/10));
@@ -485,8 +485,8 @@ void GameCore::onHeroDeath(){
 
     QGraphicsTextItem* pText = new QGraphicsTextItem;
     m_pScene->addItem(pText);
-    pText->setHtml(QString("<div style=\"color: red; font-size: %1px; font-weight: bold;\"><center><div style=\"font-size: %2px;\">GAME</div><div>OVER</div></center></div>")
-                   .arg(m_pScene->height()/2.5).arg(m_pScene->height()/3.5));
+    pText->setHtml(QString("<div style=\"color: red; font-size: %1px; font-weight: bold;\"><center><div style=\"font-size: %2px;\">%3</div><div>%4</div></center></div>")
+                   .arg(m_pScene->height()/2.5).arg(m_pScene->height()/3.5).arg(QObject::tr("GAME")).arg(QObject::tr("OVER")));
     pText->setTextWidth(m_pScene->width());
     pText->setPos(QPointF(0,m_pScene->height()/20));
     pText->setOpacity(0.8);
@@ -509,7 +509,7 @@ void GameCore::onZombieHurt(){
 void GameCore::onZombieDeath(QPointF Position){
     QString Letter = m_pPlayer->pickLetter();
     if(Letter != Player::NoLetter){
-        displayMessage(Position,QString("Found %1 !").arg(Letter));
+        displayMessage(Position,QString(QObject::tr("Trouvé %1 !")).arg(Letter));
         m_pGameStatus->addFoundLetter(Letter);
     }
 

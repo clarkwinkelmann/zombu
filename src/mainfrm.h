@@ -13,6 +13,7 @@
 #include "gamescene.h"
 #include "gamestatus.h"
 #include "player.h"
+#include "apptranslator.h"
 
 namespace Ui {
 class MainFrm;
@@ -34,6 +35,9 @@ public:
         QString Letter;
     };
 
+signals:
+    void changedLocale(AppTranslator::Locale_e locale);
+
 private:
     Ui::MainFrm *ui;
     GameScene* m_pGameScene;
@@ -50,6 +54,8 @@ private slots:
     void on_btnNextRound_clicked();
     void on_btnNextLevel_clicked();
     void on_btnRestart_clicked();
+    void on_btnPickLangFr_clicked();
+    void on_btnPickLangEn_clicked();
     void on_btnGameMenuToMainMenu_clicked();
     void on_updateStatus(GameStatus* pGameStatus);
     void on_roundEnded(GameStatus* pGameStatus, Player* pPlayer);
