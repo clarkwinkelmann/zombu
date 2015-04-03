@@ -8,6 +8,7 @@
 
 #include "resources.h"
 #include "libzombu.h"
+#include "apptranslator.h"
 
 // Remplace "aucune lettre"
 const QString Player::NoLetter("?");
@@ -53,7 +54,7 @@ Player::Player(Player::GameDifficulty_e GameDifficulty)
 
     m_pWordLibrary = new WordLibrary;
 
-    m_pWordLibrary->loadFromFile(GameFramework::resourcesPath()+"mots_fr.txt");
+    m_pWordLibrary->loadFromFile(GameFramework::wordsPath() + AppTranslator::tr("fr") + ".txt");
 
     for(int i=0;i<Amelioration_LAST_ITEM;i++){
         m_Ameliorations[i].setWordLibrary(m_pWordLibrary);

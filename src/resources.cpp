@@ -75,4 +75,11 @@ en vue du déploiement.
     QString localesPath() {
         return resourcesPath() + QDir::separator() + QString("locales") + QDir::separator();
     }
+
+    /**
+     * @return Emplacement des listes de mots
+     */
+    QString wordsPath() {
+        return resourcesPath() + QDir::separator() + QString("words") + QDir::separator();
+    }
 }

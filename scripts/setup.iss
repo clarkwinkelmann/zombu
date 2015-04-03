@@ -37,7 +37,6 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 [Files]
 Source: "deploy\Zombu.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "deploy\res\*"; DestDir: "{app}\res"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "deploy\res\mots_fr.txt"; DestDir: "{app}\res"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

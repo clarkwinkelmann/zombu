@@ -83,9 +83,10 @@ copy %CompilDir%\release\%Executable% %DeployDir%\ > nul
 if "%Verbose%"=="1" echo Copie des ressources...
 mkdir %DeployDir%\res\images\
 mkdir %DeployDir%\res\locales\
+mkdir %DeployDir%\res\words\
 copy ..\res\images\*.png %DeployDir%\res\images\
 copy ..\res\locales\*.qm %DeployDir%\res\locales\
-copy ..\res\mots_fr.txt %DeployDir%\res\
+copy ..\res\words\*.txt %DeployDir%\res\words\
 
 if "%Verbose%"=="1" echo Fin de la copie.
 

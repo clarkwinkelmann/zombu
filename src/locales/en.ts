@@ -2,6 +2,14 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en" sourcelanguage="fr_CH">
 <context>
+    <name>AppTranslator</name>
+    <message>
+        <location filename="../player.cpp" line="57"/>
+        <source>fr</source>
+        <translation>en</translation>
+    </message>
+</context>
+<context>
     <name>MainFrm</name>
     <message>
         <location filename="../mainfrm.ui" line="14"/>
