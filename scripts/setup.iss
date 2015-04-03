@@ -2,9 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Zombu"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.1"
 #define MyAppPublisher "Clark Winkelmann"
-#define MyAppURL "http://clarkwinkelmann.com/zombu"
+#define MyAppPublisherURL "http://clarkwinkelmann.com/"
+#define MyAppURL "http://zombu.rip/"
 #define MyAppExeName "Zombu.exe"
 
 [Setup]
@@ -16,12 +17,12 @@ AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
-AppPublisherURL={#MyAppURL}
+AppPublisherURL={#MyAppPublisherURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-OutputBaseFilename="Zombu Setup"
+OutputBaseFilename="Zombu_Setup_Windows"
 OutputDir=.\
 Compression=lzma
 SolidCompression=yes
