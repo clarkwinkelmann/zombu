@@ -21,9 +21,7 @@ Vous trouverez le [Petit guide du Zombu](doc/Mode demploi.odt) avec le reste de 
 Installer le jeu
 ----------------
 
-Vous pouvez télécharger le Setup pour le jeu sur [clarkwinkelmann.com/zombu](http://clarkwinkelmann.com/zombu).
-
-Bien que conçu pour Windows cet installeur fonctionne également bien avec Wine sur un système Linux.
+Rendez-vous simplement sur l'onglet releases ci-dessus pour télécharger un installeur. Vous pouvez également vous rendre sur le site <http://zombu.rip/> et cliquer sur le bouton Télécharger.
 
 Modifier le jeu
 ---------------
@@ -57,7 +55,11 @@ Le script generate-doc.sh se charge de compiler les fichiers odt vers pdf et de 
 État du projet
 --------------
 
-Le projet n'est plus sous développement mais si vous signalez des bugs je serai heureux de tenter de les corriger. Vous pouvez également faire des suggestions, peut-être qu'elles me motiveront à publier une nouvelle version =)
+Le projet n'est plus sous développement actif, mais si vous avez un problème ou repérez un bug je serai heureux de vous aider.
+
+Si vous avez des idées d'améliorations n'hésitez pas à faire des suggestions ou même déposer une Pull Request, j'y jeterai un coup d'oeil !
+
+Vous avez quelque chose à dire ? Rendez-vous simplement sur la page des Issues GitHub.
 
 Licence
 -------
