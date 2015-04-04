@@ -1,3 +1,6 @@
 *.exe
+*.tar.gz
 tmpdir/
 deploy/
+linux-compile/
+linux-deploy/
