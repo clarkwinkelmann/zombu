@@ -1,3 +1,7 @@
 *.exe
+*.tar.gz
 tmpdir/
 deploy/
+linux-compile-64/
+linux-deploy-64/
+Zombu_Linux_64bit/
